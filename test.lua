@@ -28,7 +28,7 @@ if getgenv().Version ~= scriptversion then
     local MainData  =  LocalPlayer:WaitForChild('MAIN_DATA')
     local Fruit     =  MainData:WaitForChild('Fruits'):WaitForChild(MainData:WaitForChild('Slots')[MainData:WaitForChild('Slot').Value].Value)
     local UI        =  PlayerGui.UI
-    local Blacklist =  {"LotusDoughCombo"}
+    local Blacklist =  getgenv().Blacklist
     local inDanger  = false
 -- Play Button
     local Buttons, PlayFunction

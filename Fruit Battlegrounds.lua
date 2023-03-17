@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 local codes = {"LIT210","190KWOWBRUH!","CANTSTOP","DUBMINER","FREECASHBRO","ITKEEPSCOMING!","YESSIRBIG200!","NEVERSTOP","FUNNYNUMBER","SHUTDOWNLUCK"}
 local wantedfruits = {"Phoenix","Quake","Gravity","TSRubber","Dragon","Mochi","Dough","DOUGH","MOCHI"}
-local wantedstext = "Phoenix, Quake, Gravity, TSRubber, Dragon, Dough"
+local wantedstext = "Quake, Gravity, Phoenix, TSRubber, Dragon, Dough"
 
 local Window = Rayfield:CreateWindow({
    Name = "Protocol Valyne || Fruit Battlegrounds",

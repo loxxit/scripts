@@ -1,6 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 local codes = {"LIT210","190KWOWBRUH!","CANTSTOP","DUBMINER","FREECASHBRO","ITKEEPSCOMING!","YESSIRBIG200!","NEVERSTOP","FUNNYNUMBER","SHUTDOWNLUCK"}
 local wantedfruits = {"Phoenix","Quake","Gravity","TSRubber","Dragon","Mochi","Dough","DOUGH","MOCHI"}
+local wantedstext = "Phoenix, Quake, Gravity, TSRubber, Dragon, Dough"
 
 local Window = Rayfield:CreateWindow({
    Name = "Protocol Valyne || Fruit Battlegrounds",
@@ -24,7 +25,7 @@ local Section = Tab:CreateSection("Main")
 
 
 
-local Label = Tab:CreateLabel("Auto Selected: All legendary Fruits, all mythic fruits.")
+local Label = Tab:CreateLabel("Auto Selected: "..wantedstext)
 
 
 local Label2 = Tab:CreateLabel("Current Fruits: "..game.Players.LocalPlayer["MAIN_DATA"].Slots["1"].Value.." and "..game.Players.LocalPlayer["MAIN_DATA"].Slots["2"].Value)
@@ -60,7 +61,21 @@ local Button = Tab:CreateButton({
 
     until table.find(wantedfruits,currfruit)
 
-   print("Got it!")
+
+    Rayfield:Notify({
+     Title = "Fruit Notifier",
+     Content = "You Got an "..game.Players.LocalPlayer["MAIN_DATA"].Slots["1"].Value.." Fruit.",
+     Duration = 6.5,
+     Image = 4483362458,
+     Actions = { -- Notification Buttons
+       Ignore = {
+         Name = "Okay!",
+         Callback = function()
+
+      end
+      },
+     },
+   })
    end,
 })
 
@@ -82,7 +97,20 @@ local Button = Tab:CreateButton({
 
     until table.find(wantedfruits,currfruit)
 
-    print("Got it!")
+    Rayfield:Notify({
+     Title = "Fruit Notifier",
+     Content = "You Got an "..game.Players.LocalPlayer["MAIN_DATA"].Slots["2"].Value.." Fruit.",
+     Duration = 6.5,
+     Image = 4483362458,
+     Actions = { -- Notification Buttons
+       Ignore = {
+         Name = "Okay!",
+         Callback = function()
+
+      end
+      },
+     },
+   })
    end,
 })
 
@@ -101,7 +129,20 @@ local Button = Tab:CreateButton({
      ["Code"] = v
     };
     game:GetService("ReplicatedStorage").Replicator:InvokeServer(string_1, string_2, table_1);
-
     end
+	Rayfield:Notify({
+     Title = "Codes",
+     Content = "Succesfully used all codes. You got: "..game.Players.LocalPlayer["MAIN_DATA"].Gems.Value.." Gems.",
+     Duration = 3,
+     Image = 4483362458,
+     Actions = { -- Notification Buttons
+       Ignore = {
+         Name = "Okay!",
+         Callback = function()
+
+         end
+      },
+     },
+    })
    end,
 })

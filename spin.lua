@@ -8,7 +8,7 @@ local remotes = replicatedStorage:WaitForChild("Remotes")
 local sendServer = remotes:WaitForChild("To_Server")
 local handleSpin = sendServer:WaitForChild("Handle_Initiate_S_")
 
-local selectedOptions = getgenv().selectedOption or {} -- Fetch the selectedOptions from getgenv()
+local selectedOptions = getgenv().selectedOptions or {}
 
 while true do
    local shouldSpin = true
@@ -23,7 +23,8 @@ while true do
    if shouldSpin then
       handleSpin:InvokeServer("check_can_spin")
    else
-      Rayfield:Notify({
+      local Rayfield = require(game:GetService("ReplicatedStorage"):WaitForChild("Rayfield"))
+      local notification = Rayfield:Notify({
          Title = "You Got " .. clan.Value,
          Content = "You Got " .. clan.Value .. " and stopped the spinning.",
          Duration = 6.5,
@@ -37,8 +38,9 @@ while true do
             }
          }
       })
+      notification:Destroy()
       break -- Exit the loop when spinning stops
    end
 
-   task.wait(0.001)
+   wait(0.001)
 end

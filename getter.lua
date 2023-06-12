@@ -21,7 +21,7 @@ local GAMENAME = nil
 local webhookcheck = (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (KRNL_LOADED and "Krnl") or (is_sirhurt_closure and "SirHurt") or (identifyexecutor():find("ScriptWare") and "Script-Ware") or ("Unsupported")
 
 --With Logo-- local webhookcheck = (syn and not is_sirhurt_closure and not pebc_execute and "<:synapsex:991095647186845696> Synapse X") or (secure_load and "<:Sentiel:991103465248002179> Sentinel") or (pebc_execute and "<:ProtoSmasher:991101951766970539> ProtoSmasher") or (KRNL_LOADED and "<:krnl:991095457977610310> Krnl") or (is_sirhurt_closure and "SirHurt") or (identifyexecutor():find("ScriptWare") and "<:ScriptWare:991098705157435414> Script-Ware") or ("Unsupported")
-local api_key = os.getenv("WEBHOOK")
+local WEBHOOK = os.getenv("WEBHOOK")
 -- Use the secret in your code
 
 

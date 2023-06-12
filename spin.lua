@@ -1,4 +1,3 @@
-
 while true do
    local shouldSpin = true
 

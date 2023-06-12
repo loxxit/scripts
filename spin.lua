@@ -52,4 +52,14 @@ while true do
             Actions = {
                 Ignore = {
                     Name = "Okay!",
-                    Callback = function
+                    Callback = function()
+                        print("The user tapped Okay!")
+                    end
+                }
+            }
+        })
+        break -- Exit the loop when no spins left
+    end
+
+    wait(0.001)
+end

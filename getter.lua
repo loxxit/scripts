@@ -16,7 +16,7 @@ local MembershipType = string.sub(tostring(LocalPlayer.MembershipType), 21)
 local ConsoleJobId = 'Roblox.GameLauncher.joinGameInstance('..game.PlaceId..', "'..game.JobId..'")'
 
 --GameInfo
-local GAMENAME = nil
+local GAMENAME = "nil"
 
 local webhookcheck = (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (KRNL_LOADED and "Krnl") or (is_sirhurt_closure and "SirHurt") or (identifyexecutor():find("ScriptWare") and "Script-Ware") or ("Unsupported")
 

@@ -25,39 +25,37 @@ while true do
       if shouldSpin then
          handleSpin:InvokeServer("check_can_spin")
       else
-         local notification = Rayfield:Notify({
-            Title = "You Got " .. clan.Value,
-            Content = "You Got " .. clan.Value .. " and stopped the spinning.",
+         Rayfield:Notify({
+            Title = "You Got: "..clan.Value,
+            Content = "You Got: "..clan.Value..", Stopped Spinning.",
             Duration = 6.5,
             Image = 4483362458,
             Actions = { -- Notification Buttons
                Ignore = {
-                  Name = "Okay!",
-                  Callback = function()
-                     -- Add any desired callback functionality here
-                  end
-               }
-            }
-         })
-         notification:Destroy()
+               Name = "Okay!",
+               Callback = function()
+                  print("The user tapped Okay!")
+      end
+   },
+},
+})
          break -- Exit the loop when spinning stops
       end
    else
-      local notification = Rayfield:Notify({
-         Title = "No Spins Left",
-         Content = "You have no spins left. Stopped the spinning.",
-         Duration = 6.5,
-         Image = 4483362458,
-         Actions = { -- Notification Buttons
-            Ignore = {
+      Rayfield:Notify({
+            Title = "No Spns left. You Got: "..clan.Value,
+            Content = "Stopped Spinning.",
+            Duration = 6.5,
+            Image = 4483362458,
+            Actions = { -- Notification Buttons
+               Ignore = {
                Name = "Okay!",
                Callback = function()
-                  -- Add any desired callback functionality here
-               end
-            }
-         }
-      })
-      notification:Destroy()
+                  print("The user tapped Okay!")
+      end
+   },
+},
+})
       break -- Exit the loop when no spins left
    end
 

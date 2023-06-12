@@ -1,5 +1,4 @@
 local codes = {
-    "Upd295MiniCode",
     "Thx4300MNOuwohanaIsBack",
     "ThanksForLikes600K",
     "ThanksForLikes600K2",

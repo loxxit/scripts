@@ -43,7 +43,21 @@ while true do
          break -- Exit the loop when spinning stops
       end
    else
-      print("No spins left")
+      local notification = Rayfield:Notify({
+            Title = "You Got " .. clan.Value..,
+            Content = "You Got " .. clan.Value .. " and no spins left. Stopped the spinning.",
+            Duration = 6.5,
+            Image = 4483362458,
+            Actions = { -- Notification Buttons
+               Ignore = {
+                  Name = "Okay!",
+                  Callback = function()
+                     -- Add any desired callback functionality here
+                  end
+               }
+            }
+         })
+         notification:Destroy()
       break -- Exit the loop when no spins left
    end
 

@@ -8,8 +8,19 @@ local remotes = replicatedStorage:WaitForChild("Remotes")
 local sendServer = remotes:WaitForChild("To_Server")
 local handleSpin = sendServer:WaitForChild("Handle_Initiate_S_")
 
+local selectedOptions = getgenv().selectedOption or {} -- Fetch the selectedOptions from getgenv()
+
 while true do
-   if not table.find(getgenv().selectedOption, clan.Value) then
+   local shouldSpin = true
+
+   for _, option in ipairs(selectedOptions) do
+      if option == clan.Value then
+         shouldSpin = false
+         break
+      end
+   end
+
+   if shouldSpin then
       handleSpin:InvokeServer("check_can_spin")
    else
       Rayfield:Notify({
@@ -28,5 +39,6 @@ while true do
       })
       break -- Exit the loop when spinning stops
    end
+
    task.wait(0.001)
 end

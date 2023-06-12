@@ -1,3 +1,16 @@
+local players = game:GetService("Players")
+local localPlayer = players.LocalPlayer
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local playerData = replicatedStorage:WaitForChild("Player_Data")
+local localData = playerData:WaitForChild(localPlayer.Name)
+local clan = localData:WaitForChild("Clan")
+local spins = playerData:WaitForChild(localPlayer.Name).Spins
+local remotes = replicatedStorage:WaitForChild("Remotes")
+local sendServer = remotes:WaitForChild("To_Server")
+local handleSpin = sendServer:WaitForChild("Handle_Initiate_S_")
+
+local selectedOptions = getgenv().selectedOptions or {}
+
 while true do
    local shouldSpin = true
 

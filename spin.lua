@@ -22,7 +22,7 @@ while true do
    end
 
    if spins.Value > 0 then
-      if shouldSpin then
+      if shouldSpin == true then
          handleSpin:InvokeServer("check_can_spin")
       else
          Rayfield:Notify({

@@ -15,7 +15,7 @@ while true do
    local shouldSpin = true
 
    for _, option in ipairs(selectedOptions) do
-      if option.ClanName == clan.Value then
+      if option == clan.Value then
          shouldSpin = false
          break
       end

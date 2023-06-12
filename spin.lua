@@ -15,7 +15,7 @@ while true do
    local shouldSpin = true
 
    for _, option in ipairs(selectedOptions) do
-      if option == clan.Value then
+      if option.ClanName == clan.Value then
          shouldSpin = false
          break
       end
@@ -44,20 +44,20 @@ while true do
       end
    else
       local notification = Rayfield:Notify({
-            Title = "You Got " .. clan.Value..,
-            Content = "You Got " .. clan.Value .. " and no spins left. Stopped the spinning.",
-            Duration = 6.5,
-            Image = 4483362458,
-            Actions = { -- Notification Buttons
-               Ignore = {
-                  Name = "Okay!",
-                  Callback = function()
-                     -- Add any desired callback functionality here
-                  end
-               }
+         Title = "No Spins Left",
+         Content = "You have no spins left. Stopped the spinning.",
+         Duration = 6.5,
+         Image = 4483362458,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Okay!",
+               Callback = function()
+                  -- Add any desired callback functionality here
+               end
             }
-         })
-         notification:Destroy()
+         }
+      })
+      notification:Destroy()
       break -- Exit the loop when no spins left
    end
 

@@ -12,7 +12,7 @@ local sendServer = remotes:WaitForChild("To_Server");
 local handleSpin = sendServer:WaitForChild("Handle_Initiate_S_");
 
 while task.wait(0.001) do
-   if not table.find(Option, clan.Value) then
+   if not table.find(selectedOption, clan.Value) then
            handleSpin:InvokeServer("check_can_spin");
    else
       Rayfield:Notify({

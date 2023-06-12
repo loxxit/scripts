@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/getter.lua"))()
-
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
    

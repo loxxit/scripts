@@ -1,12 +1,15 @@
-local menu = 5956785391
-local ouwhana = 11468159863
-local map1 = 6152116144
-local ouwg = 11468075017
+local codes = {
+    [5956785391] = "https://raw.githubusercontent.com/loxxit/scripts/main/menu.lua",
+    [11468159863] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua",
+    [6152116144] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua",
+    [11468075017] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua",
+    [2142948266] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua"
+}
 
-if game.PlaceId == ouwg or ouwhana or map1 then
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/game.lua"))()
- elseif game.PlaceId == menu then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/menu.lua"))()
- else 
-   game.Players.LocalPlayer:Kick("Not Supported")
- end
+local codeURL = codes[game.PlaceId]
+
+if codeURL then
+    loadstring(game:HttpGet(codeURL))()
+else
+    game.Players.LocalPlayer:Kick("Not Supported")
+end

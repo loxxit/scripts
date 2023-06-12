@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/getter.lua"))()
 
 
 

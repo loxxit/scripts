@@ -4,6 +4,8 @@ until game:IsLoaded()
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+local player = game:GetService("Players").LocalPlayer.Name
+
 local on = nil
 
 local function GetAll()
@@ -88,7 +90,7 @@ local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("Section Example")
 
-local hm = game.workspace.Terrain.World.TargetFilter.Characters.Players.LocalPlayer.HumanoidRootPart
+local hm = game.workspace.Terrain.World.TargetFilter.Characters.Players[player].HumanoidRootPart
 
 local CFRAMES = {
    ["Central Port"] = CFrame.new(-4008.63794, 595.774902, 676.394165, 0.468885779, -8.75297435e-09, 0.88325882, -1.28927757e-08, 1, 1.67541074e-08, -0.88325882, -1.92434211e-08, 0.468885779),

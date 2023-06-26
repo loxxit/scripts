@@ -22,11 +22,11 @@ local function GetAll()
         end
     end
 
-    -- Check if the model structure is valid
+
     if proximityPrompt then
         local parentParts = model:GetChildren()
 
-        -- Find the base part
+
         local basePart
         for _, part in ipairs(parentParts) do
             if part:IsA("BasePart") then

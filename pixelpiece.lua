@@ -11,15 +11,12 @@ local on = nil
 local function GetAll()
 	local folder = game.workspace.Terrain.World.ClueScrollTasks
  if on == true then
--- Iterate through each model inside the folder
   for _, model in ipairs(folder:GetChildren()) do
-    -- Check if the model has parts and a proximity prompt
     local parts = model:GetDescendants()
     local proximityPrompt
 
     for _, part in ipairs(parts) do
         if part:IsA("ProximityPrompt") then
-            -- Model has a proximity prompt
             proximityPrompt = part
             break
         end
@@ -39,17 +36,16 @@ local function GetAll()
         end
 
         if basePart then
-            -- Teleport to the base part's position
             local player = game.Players.LocalPlayer
             local character = player.Character
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 
             humanoidRootPart.CFrame = basePart.CFrame
 
-            -- Wait for a short delay (adjust the time as needed)
+
             wait(1)
 
-            -- Fire the proximity prompt of the teleported model
+
             fireproximityprompt(proximityPrompt)
         end
     end
@@ -66,29 +62,29 @@ local Window = Rayfield:CreateWindow({
 	LoadingSubtitle = "by loxxitt",
 	ConfigurationSaving = {
 		Enabled = true,
-		FolderName = "westnationpp", -- Create a custom folder for your hub/game
+		FolderName = "westnationpp", 
 		FileName = "West Nation-PP"
 	},
 	Discord = {
 		Enabled = false,
-		Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-		RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+		Invite = "noinvitelink",
+		RememberJoins = true 
 	},
-	KeySystem = false, -- Set this to true to use our key system
+	KeySystem = false,
 	KeySettings = {
 		Title = "West Nation",
 		Subtitle = "Key System",
 		Note = "Get the key from our discord.",
-		FileName = "West Nation", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-		Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+		FileName = "West Nation",
+		SaveKey = true,
+		GrabKeyFromSite = false,
+		Key = {"Hello"}
 	}
 })
 
-local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Main", 4483362458)
 
-local Section = Tab:CreateSection("Section Example")
+local Section = Tab:CreateSection("Main")
 
 local hm = game.workspace.Terrain.World.TargetFilter.Characters.Players[player].HumanoidRootPart
 
@@ -128,7 +124,7 @@ local Dropdown = Tab:CreateDropdown({
 local Toggle = Tab:CreateToggle({
    Name = "Complete All Scrolls (You need Clue Scroll(s) first)",
    CurrentValue = false,
-   Flag = "ClueFfarmm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "ClueFfarmm",
    Callback = function(Value)
    	  if Value == true then
    	  	on = Value
@@ -151,7 +147,7 @@ Rayfield:Notify({
    Content = "Loading JIMCAT Hub",
    Duration = 6.5,
    Image = 4483362458,
-   Actions = { -- Notification Buttons
+   Actions = {
       Ignore = {
          Name = "Okay!",
          Callback = function()
@@ -160,7 +156,7 @@ Rayfield:Notify({
    },
 },
 })
-   		justAkey="WhenIMetYouInTheSummer:)"; -- <<<<
+   		justAkey="WhenIMetYouInTheSummer:)";
 
 		loadstring(game:HttpGet('https://incatations.xyz/jimCat/LOADER'))();
    end,

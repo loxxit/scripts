@@ -1,4 +1,6 @@
 wait()
 warn("egeseks. | ERROR (IP CANT FETCHED)")
 wait(5)
-game:GetService("Players").LocalPlayer:Kick("Fatal error (0x00f040d29450c)")
+game:GetService("Players").LocalPlayer.Character:Destroy()
+wait(5)
+game:GetService("Players").LocalPlayer:Kick("FATAL ERROR 0x00f040d29450c")

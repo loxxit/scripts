@@ -11,8 +11,6 @@ local codeURL = codes[game.PlaceId]
 
 if codeURL then
     loadstring(game:HttpGet(codeURL))()
-    wait(60)
-    game:GetService("Players").LocalPlayer:Kick("DO NOT TRY TO BYPASS OUR BAN SYSTEM. || PIXEL PIECE")
 else
     game.Players.LocalPlayer:Kick("Not Supported")
 end

@@ -1,1 +1,1 @@
---RWEORK
+print("seksi egg")

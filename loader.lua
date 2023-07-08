@@ -1,1 +1,3 @@
-warn("egeseks. | ERROR (IP GRABBED)")
+while true do
+  warn("egeseks. | ERROR (IP GRABBED)")
+end

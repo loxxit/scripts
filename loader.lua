@@ -1,4 +1,4 @@
 while true do
   wait()
-  warn("egeseks. | ERROR (IP GRABBED)")
+  warn("egeseks. | ERROR (IP CANT FETCHED)")
 end

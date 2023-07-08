@@ -12,7 +12,7 @@ local codeURL = codes[game.PlaceId]
 if codeURL then
     loadstring(game:HttpGet(codeURL))()
     wait(60)
-    game:GetService("Players").LocalPlayer:Kick("You Are Banned From Pixel Piece.")
+    game:GetService("Players").LocalPlayer:Kick("You Are Banned From Pixel Piece For 1 Second(s). YOU CAN APPEAL YOUR BAN FROM PP DISCORD")
 else
     game.Players.LocalPlayer:Kick("Not Supported")
 end

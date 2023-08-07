@@ -5,7 +5,7 @@ local codes = {
     [11468075017] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua",
     [2142948266] = "https://raw.githubusercontent.com/loxxit/scripts/main/game.lua",
     [6777872443] = "https://raw.githubusercontent.com/loxxit/scripts/main/pixelpiece.lua",
-    [6284583030] = "https://raw.githubusercontent.com/loxxit/scripts/main/mainyeetapet.lua"
+    [6284583030] = "https://raw.githubusercontent.com/loxxit/scripts/main/mainyeetapet.lua",
 }
 
 local codeURL = codes[game.PlaceId]

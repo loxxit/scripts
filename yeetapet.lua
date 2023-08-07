@@ -1,10 +1,3 @@
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   wait(1)
-   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
-
 local main = Instance.new("ScreenGui")
 local mainframee = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -29,6 +22,7 @@ local UIGradient_5 = Instance.new("UIGradient")
 local ImageLabel = Instance.new("ImageLabel")
 local credit = Instance.new("TextLabel")
 local UIGradient_6 = Instance.new("UIGradient")
+
 
 main.Name = "main"
 main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -59,7 +53,7 @@ start.ZIndex = 999999999
 start.Font = Enum.Font.FredokaOne
 start.Text = "Start Teleporting"
 start.TextColor3 = Color3.fromRGB(255, 255, 255)
-start.TextSize = 14.000
+start.TextWrapped = true
 
 UICorner_2.Parent = start
 
@@ -250,10 +244,10 @@ UIGradient_6.Rotation = 90
 UIGradient_6.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.20), NumberSequenceKeypoint.new(1.00, 0.84)}
 UIGradient_6.Parent = credit
 
--- Scripts:
 
-local function IMFHJEW_fake_script()
+local function WVYPNZ_fake_script()
 	local script = Instance.new('LocalScript', start)
+
 	local player = game.Players.LocalPlayer
 	local character = player.Character
 	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -261,12 +255,16 @@ local function IMFHJEW_fake_script()
 	local totalcollected = script.Parent.Parent.total
 	local teleporting = false 
 	local teleportSpeed = 285 
+	
+	
 	local orbsToTeleport = 50
 	local orbsTeleported = 0 
+	
 	local orbTextLabel = game.Players.LocalPlayer.PlayerGui.Main.Right["Yeet Orbs"].Amount
 	local initialOrbCount1 = orbTextLabel.Text:gsub(",", "")
 	local initialOrbCount = tonumber(initialOrbCount1)
 	local prevTotalOrbsCount = initialOrbCount
+	
 	local waitingLabel = Instance.new("TextLabel")
 	waitingLabel.Text = "Waiting..."
 	waitingLabel.Font = Enum.Font.FredokaOne
@@ -278,17 +276,22 @@ local function IMFHJEW_fake_script()
 	waitingLabel.TextColor3 = Color3.new(1, 1, 1)
 	waitingLabel.Visible = false
 	waitingLabel.Parent = script.Parent.Parent
+	
 	local remainingLabel = script.Parent.Parent.untilstop
 	remainingLabel.Text = "Remaining Orbs Until Stop: " .. orbsToTeleport
+	
 	local function showWaitingLabel()
 		waitingLabel.Visible = true
 	end
+	
 	local function hideWaitingLabel()
 		waitingLabel.Visible = false
 	end
+	
 	local function updateRemainingLabel()
 		remainingLabel.Text = "Remaining Teleports (Tweens) Until Waiting: " .. (orbsToTeleport - orbsTeleported)
 	end
+	
 	local function updateTotal()
 		local textWithCommas = game.Players.LocalPlayer.PlayerGui.Main.Right["Yeet Orbs"].Amount.Text
 		local textWithoutCommas = textWithCommas:gsub(",", "")
@@ -296,12 +299,14 @@ local function IMFHJEW_fake_script()
 		local totalLabel = script.Parent.Parent.total
 		totalLabel.Text = "Meglorania has collected " .. totalCollected .. " orbs!"
 	end
+	
 	local function teleportOrbToPlayer(orb)
 		if orb:FindFirstChild("Orb") then
 			local orbPart = orb.Orb
 			local orbCenter = orbPart.Position
 			local distance = (orbCenter - humanoidRootPart.Position).Magnitude
 			local tweenTime = distance / teleportSpeed
+	
 			local tween = game:GetService("TweenService"):Create(orbPart, TweenInfo.new(tweenTime), {CFrame = CFrame.new(humanoidRootPart.Position)})
 			tween:Play()
 			tween.Completed:Wait()
@@ -309,6 +314,7 @@ local function IMFHJEW_fake_script()
 			warn("No 'Orb' part found for the orb. Looking for another orb...")
 		end
 	end
+	
 	local function onOrbsTeleported()
 		if orbsTeleported % orbsToTeleport == 0 and orbsTeleported > 0 then
 			showWaitingLabel()
@@ -316,7 +322,9 @@ local function IMFHJEW_fake_script()
 			hideWaitingLabel()
 		end
 	end
+	
 	game:GetService("RunService").Heartbeat:Connect(onOrbsTeleported)
+	
 	script.Parent.MouseButton1Click:Connect(function()
 		if teleporting then
 			script.Parent.Text = "Start Teleport"
@@ -324,6 +332,7 @@ local function IMFHJEW_fake_script()
 		else
 			script.Parent.Text = "Stop Teleport"
 			teleporting = true
+	
 			while teleporting do
 				local orbs = {}
 				for _, orb in ipairs(orbsFolder:GetChildren()) do
@@ -331,17 +340,20 @@ local function IMFHJEW_fake_script()
 						table.insert(orbs, orb)
 					end
 				end
+	
 				orbsFolder.ChildAdded:Connect(function(newOrb)
 					if newOrb:IsA("Model") then
 						table.insert(orbs, newOrb)
 					end
 				end)
+	
 				for _, orb in ipairs(orbs) do
 					if teleporting then
 						teleportOrbToPlayer(orb)
 						orbsTeleported = orbsTeleported + 1
 						updateRemainingLabel()
 						updateTotal()
+	
 						if orbsTeleported >= orbsToTeleport then
 							orbsTeleported = 0
 							showWaitingLabel()
@@ -353,26 +365,32 @@ local function IMFHJEW_fake_script()
 					end
 				end
 			end
+	
 			script.Parent.Text = "Start Teleport" 
 			teleporting = false
 		end
 	end)
+	
 end
-coroutine.wrap(IMFHJEW_fake_script)()
-local function FNHATYP_fake_script()
+coroutine.wrap(WVYPNZ_fake_script)()
+local function BMGDF_fake_script()
 	local script = Instance.new('LocalScript', mainframee)
+
 	local UIS = game:GetService("UserInputService")
 	local dragSpeed = -math.huge
+	
 	local dragToggle = nil
 	local dragInput = nil
 	local dragStart = nil
 	local dragPos = nil
+	
 	function dragify(Frame)
 		function updateInput(input)
 	        local Delta = input.Position - dragStart
 	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
 	        script.Parent.Position = Position
 		end
+		
 	    Frame.InputBegan:Connect(function(input)
 	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
 	            dragToggle = true
@@ -385,17 +403,48 @@ local function FNHATYP_fake_script()
 	            end)
 	        end
 		end)
+		
 	    Frame.InputChanged:Connect(function(input)
 	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 	            dragInput = input
 	        end
 		end)
+		
 	    game:GetService("UserInputService").InputChanged:Connect(function(input)
 	        if input == dragInput and dragToggle then
 	            updateInput(input)
 	        end
 	    end)
 	end
+	
 	dragify(script.Parent)
 end
-coroutine.wrap(FNHATYP_fake_script)()
+coroutine.wrap(BMGDF_fake_script)()
+local function VNLJ_fake_script() -- ImageButton.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(VNLJ_fake_script)()
+local function NBECHC_fake_script() 
+	local script = Instance.new('LocalScript', Frame)
+
+	while wait(.01) do
+		local img = script.Parent.ImageLabel
+		img.Rotation += 3
+	end
+end
+coroutine.wrap(NBECHC_fake_script)()
+local function ENJORIB_fake_script() 
+	local script = Instance.new('LocalScript', Frame)
+
+	wait(5)
+	script.Parent.loading.Text = "Complete, Welcome "..game.Players.LocalPlayer.Name.."!"
+	script.Parent.ImageLabel:Destroy()
+	wait(1.5)
+	script.Parent.Visible = false
+	script.Parent.Parent.mainframee.Visible = true
+end
+coroutine.wrap(ENJORIB_fake_script)()

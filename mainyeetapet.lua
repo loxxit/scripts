@@ -551,8 +551,7 @@ UIGradient_16.Rotation = 90
 UIGradient_16.Parent = credit_2
 
 
-
-local function KTRDKV_fake_script() 
+local function TIBYP_fake_script() 
 	local script = Instance.new('LocalScript', Frame)
 
 	while wait(.01) do
@@ -560,8 +559,8 @@ local function KTRDKV_fake_script()
 		img.Rotation += 3
 	end
 end
-coroutine.wrap(KTRDKV_fake_script)()
-local function ZGEJYXL_fake_script() 
+coroutine.wrap(TIBYP_fake_script)()
+local function YFTLOV_fake_script() 
 	local script = Instance.new('LocalScript', Frame)
 
 	wait(5)
@@ -569,8 +568,8 @@ local function ZGEJYXL_fake_script()
 	script.Parent.Visible = false
 	script.Parent.Parent.version.Visible = true
 end
-coroutine.wrap(ZGEJYXL_fake_script)()
-local function IDDKAH_fake_script() 
+coroutine.wrap(YFTLOV_fake_script)()
+local function DWYE_fake_script() 
 	local script = Instance.new('LocalScript', Frame)
 
 	repeat
@@ -584,25 +583,22 @@ local function IDDKAH_fake_script()
 		script.Parent.loading.Text = "Loading..."
 	until script.Parent.Visible == false
 end
-coroutine.wrap(IDDKAH_fake_script)()
-local function MFOKRNC_fake_script() 
+coroutine.wrap(DWYE_fake_script)()
+local function RVQV_fake_script() 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UIS = game:GetService("UserInputService")
-	local dragSpeed = -math.huge
-	
-	local dragToggle = nil
-	local dragInput = nil
-	local dragStart = nil
-	local dragPos = nil
-	
 	function dragify(Frame)
-		function updateInput(input)
+	    dragToggle = nil
+	    local dragSpeed = 0.50
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
 	        local Delta = input.Position - dragStart
 	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        script.Parent.Position = Position
-		end
-		
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+	    end
 	    Frame.InputBegan:Connect(function(input)
 	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
 	            dragToggle = true
@@ -614,14 +610,12 @@ local function MFOKRNC_fake_script()
 	                end
 	            end)
 	        end
-		end)
-		
+	    end)
 	    Frame.InputChanged:Connect(function(input)
 	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 	            dragInput = input
 	        end
-		end)
-		
+	    end)
 	    game:GetService("UserInputService").InputChanged:Connect(function(input)
 	        if input == dragInput and dragToggle then
 	            updateInput(input)
@@ -631,8 +625,8 @@ local function MFOKRNC_fake_script()
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(MFOKRNC_fake_script)()
-local function QBEF_fake_script()
+coroutine.wrap(RVQV_fake_script)()
+local function UTFHK_fake_script() 
 	local script = Instance.new('LocalScript', old)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -640,8 +634,8 @@ local function QBEF_fake_script()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(QBEF_fake_script)()
-local function ZUXCZF_fake_script() 
+coroutine.wrap(UTFHK_fake_script)()
+local function QYDBTIZ_fake_script() 
 	local script = Instance.new('LocalScript', new)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -649,25 +643,22 @@ local function ZUXCZF_fake_script()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(ZUXCZF_fake_script)()
-local function YWSVAJL_fake_script() 
+coroutine.wrap(QYDBTIZ_fake_script)()
+local function KGIUY_fake_script()
 	local script = Instance.new('LocalScript', version)
 
 	local UIS = game:GetService("UserInputService")
-	local dragSpeed = -math.huge
-	
-	local dragToggle = nil
-	local dragInput = nil
-	local dragStart = nil
-	local dragPos = nil
-	
 	function dragify(Frame)
-		function updateInput(input)
+	    dragToggle = nil
+	    local dragSpeed = 0.50
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
 	        local Delta = input.Position - dragStart
 	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        script.Parent.Position = Position
-		end
-		
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+	    end
 	    Frame.InputBegan:Connect(function(input)
 	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
 	            dragToggle = true
@@ -679,14 +670,12 @@ local function YWSVAJL_fake_script()
 	                end
 	            end)
 	        end
-		end)
-		
+	    end)
 	    Frame.InputChanged:Connect(function(input)
 	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 	            dragInput = input
 	        end
-		end)
-		
+	    end)
 	    game:GetService("UserInputService").InputChanged:Connect(function(input)
 	        if input == dragInput and dragToggle then
 	            updateInput(input)
@@ -696,8 +685,8 @@ local function YWSVAJL_fake_script()
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(YWSVAJL_fake_script)()
-local function XQZM_fake_script() 
+coroutine.wrap(KGIUY_fake_script)()
+local function CQCM_fake_script()
 	local script = Instance.new('LocalScript', start)
 
 	local player = game.Players.LocalPlayer
@@ -705,7 +694,7 @@ local function XQZM_fake_script()
 	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 	local orbsFolder = workspace.__MAP.Interactive.Orbs
 	local totalcollected = script.Parent.Parent.total
-	local teleporting = false 
+	local teleporting = false
 	local teleportSpeed = 285 
 	
 	
@@ -822,43 +811,48 @@ local function XQZM_fake_script()
 			teleporting = false
 		end
 	end)
+	
+	script.Parent.Parent.returnz.MouseButton1Click:Connect(function()
+		if teleporting then
+			script.Parent.Parent.returnz.Text = "Please Stop Teleporting"
+			wait(1)
+			script.Parent.Parent.returnz.Text = "Return To Version Select"
+			return
+		end
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.version.Visible = true
+	end)
 end
-coroutine.wrap(XQZM_fake_script)()
-local function BEZQZL_fake_script() 
+coroutine.wrap(CQCM_fake_script)()
+local function SBVEF_fake_script()
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(BEZQZL_fake_script)()
-local function KKYMH_fake_script() 
+coroutine.wrap(SBVEF_fake_script)()
+local function WDVBSP_fake_script() 
 	local script = Instance.new('LocalScript', returnz)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Visible = false
-		script.Parent.Parent.Parent.version.Visible = true
-	end)
+	
 end
-coroutine.wrap(KKYMH_fake_script)()
-local function EFTFNBP_fake_script() 
+coroutine.wrap(WDVBSP_fake_script)()
+local function XZMQI_fake_script() 
 	local script = Instance.new('LocalScript', mainframee)
 
 	local UIS = game:GetService("UserInputService")
-	local dragSpeed = -math.huge
-	
-	local dragToggle = nil
-	local dragInput = nil
-	local dragStart = nil
-	local dragPos = nil
-	
 	function dragify(Frame)
-		function updateInput(input)
+	    local dragToggle = nil
+	    local dragSpeed = 0.50
+	    local dragInput = nil
+	    local dragStart = nil
+	    local dragPos = nil
+	    local function updateInput(input)
 	        local Delta = input.Position - dragStart
 	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        script.Parent.Position = Position
-		end
-		
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+	    end
 	    Frame.InputBegan:Connect(function(input)
 	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
 	            dragToggle = true
@@ -870,14 +864,12 @@ local function EFTFNBP_fake_script()
 	                end
 	            end)
 	        end
-		end)
-		
+	    end)
 	    Frame.InputChanged:Connect(function(input)
 	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 	            dragInput = input
 	        end
-		end)
-		
+	    end)
 	    game:GetService("UserInputService").InputChanged:Connect(function(input)
 	        if input == dragInput and dragToggle then
 	            updateInput(input)
@@ -887,8 +879,8 @@ local function EFTFNBP_fake_script()
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(EFTFNBP_fake_script)()
-local function CIHIXDN_fake_script() 
+coroutine.wrap(XZMQI_fake_script)()
+local function IGXCDB_fake_script()
 	local script = Instance.new('LocalScript', start_2)
 
 	local player = game.Players.LocalPlayer
@@ -896,7 +888,7 @@ local function CIHIXDN_fake_script()
 	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 	local orbsFolder = workspace.__MAP.Interactive.Orbs
 	local totalcollected = script.Parent.Parent.total
-	local teleporting = false 
+	local teleporting = false
 	local teleportSpeed = 325 
 	local orbsToTeleport = 50 
 	local orbsTeleported = 0 
@@ -968,7 +960,7 @@ local function CIHIXDN_fake_script()
 	game:GetService("RunService").Heartbeat:Connect(onOrbsTeleported)
 	
 	script.Parent.MouseButton1Click:Connect(function()
-		if teleporting then
+		if teleporting == true then
 			script.Parent.Text = "Start Teleport"
 			teleporting = false
 		else
@@ -990,7 +982,7 @@ local function CIHIXDN_fake_script()
 				end)
 	
 				for _, orb in ipairs(orbs) do
-					if teleporting then
+					if teleporting.Value == true then
 						teleportToOrb(orb, teleportSpeed)
 						orbsTeleported = orbsTeleported + 1
 						updateRemainingLabel()
@@ -1012,75 +1004,72 @@ local function CIHIXDN_fake_script()
 			teleporting = false
 		end
 	end)
+	
+	script.Parent.Parent.returnz.MouseButton1Click:Connect(function()
+		if teleporting then
+			script.Parent.Parent.returnz.Text = "Please Stop Teleporting"
+			wait(1)
+			script.Parent.Parent.returnz.Text = "Return To Version Select"
+			return
+		end
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.version.Visible = true
+	end)
 end
-coroutine.wrap(CIHIXDN_fake_script)()
-local function VGJWH_fake_script()
+coroutine.wrap(IGXCDB_fake_script)()
+local function JJGH_fake_script() 
 	local script = Instance.new('LocalScript', newmainframee)
 
 	
 end
-coroutine.wrap(VGJWH_fake_script)()
-local function IUBXV_fake_script()
+coroutine.wrap(JJGH_fake_script)()
+local function RNIHF_fake_script()
 	local script = Instance.new('LocalScript', close)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(IUBXV_fake_script)()
-local function YGRVEFN_fake_script() 
-	local script = Instance.new('LocalScript', returnz_2)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Visible = false
-		script.Parent.Parent.Parent.version.Visible = true
-	end)
-end
-coroutine.wrap(YGRVEFN_fake_script)()
-local function WWSVER_fake_script() 
+coroutine.wrap(RNIHF_fake_script)()
+local function AYKYHTA_fake_script() 
 	local script = Instance.new('LocalScript', newmainframee)
 
 	local UIS = game:GetService("UserInputService")
-	local dragSpeed = -math.huge
-	
-	local dragToggle = nil
-	local dragInput = nil
-	local dragStart = nil
-	local dragPos = nil
-	
 	function dragify(Frame)
-		function updateInput(input)
-	        local Delta = input.Position - dragStart
-	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        script.Parent.Position = Position
+		local dragToggle = nil
+		local dragSpeed = 0.50
+		local dragInput = nil
+		local dragStart = nil
+		local dragPos = nil
+		local function updateInput(input)
+			local Delta = input.Position - dragStart
+			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
 		end
-		
-	    Frame.InputBegan:Connect(function(input)
-	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-	            dragToggle = true
-	            dragStart = input.Position
-	            startPos = Frame.Position
-	            input.Changed:Connect(function()
-	                if input.UserInputState == Enum.UserInputState.End then
-	                    dragToggle = false
-	                end
-	            end)
-	        end
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
 		end)
-		
-	    Frame.InputChanged:Connect(function(input)
-	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-	            dragInput = input
-	        end
+		Frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
 		end)
-		
-	    game:GetService("UserInputService").InputChanged:Connect(function(input)
-	        if input == dragInput and dragToggle then
-	            updateInput(input)
-	        end
-	    end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragToggle then
+				updateInput(input)
+			end
+		end)
 	end
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(WWSVER_fake_script)()
+coroutine.wrap(AYKYHTA_fake_script)()

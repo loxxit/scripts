@@ -982,7 +982,7 @@ local function IGXCDB_fake_script()
 				end)
 	
 				for _, orb in ipairs(orbs) do
-					if teleporting.Value == true then
+					if teleporting then
 						teleportToOrb(orb, teleportSpeed)
 						orbsTeleported = orbsTeleported + 1
 						updateRemainingLabel()

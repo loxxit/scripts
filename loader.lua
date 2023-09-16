@@ -7,6 +7,8 @@ elseif game.PlaceId == 5956785391 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/menu.lua"))()
 elseif game.PlaceId == 8534845015 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/sakurastands.lua"))()
+elseif game.PlaceId == 13772394625 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/loxxit/scripts/main/bladeball.lua"))()
 else
     game.StarterGui:SetCore("SendNotification", {
         Title = "West Nation";

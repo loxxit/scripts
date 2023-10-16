@@ -1,4 +1,4 @@
 _This repistory is for roblox exploiting, and all of them made by me._
-_If you have any questions or errors come join us!_ **[https://discord.gg/valyne](https://discord.gg/F2GnrCCADJ)**
+_If you have any questions or errors come join us!_ **[https://discord.gg/shinsenkyo]((https://discord.gg/wNhVfEnqfC))**
 
-**Discontinued because of hyperion. (will continue when someone decompile hyperionshit)**
+**Discontinued because of hyperion. (will continue)**
